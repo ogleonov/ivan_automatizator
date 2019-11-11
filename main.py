@@ -17,13 +17,7 @@ def loadImagesToOutDir(dir):
 if __name__ == '__main__':
     loadImagesToOutDir(dir)
     document = Document()
-    """for name in os.listdir(dirOut):
-        document.add_picture(os.path.join(dirIn, name))"""
-
-    tables = document.tables
-    table = document.add_table(rows=len(os.listdir(dirOut))+1, cols=2)
-    row_cells = table.add_row().cells
-    i=0
+    
     for name in os.listdir(dirOut):
         p = document.add_paragraph(name, 'List Bullet')
         p = p.insert_paragraph_before('')
