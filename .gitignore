@@ -1,0 +1,9 @@
+Readme.md
+__pycache__/
+in/
+out/
+.idea/ivan_automatizator.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
