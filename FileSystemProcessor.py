@@ -8,4 +8,3 @@ def loadImagesToOutDir(dir):
         os.mkdir(dirOut)
     for name in os.listdir(dirIn):
         scale_image(os.path.join(dirIn, name), os.path.join(dirOut, name), 800, 600)
-
