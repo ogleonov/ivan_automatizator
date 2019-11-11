@@ -25,9 +25,9 @@ if __name__ == '__main__':
     row_cells = table.add_row().cells
     i=0
     for name in os.listdir(dirOut):
-        p = document.add_paragraph('Picture bullet section', 'List Bullet')
+        p = document.add_paragraph(name, 'List Bullet')
         p = p.insert_paragraph_before('')
         r = p.add_run()
         r.add_picture(os.path.join(dirOut, name))
-        p = p.insert_paragraph_before('My picture title', 'Heading 1')
+        p = p.insert_paragraph_before(name, 'Heading 1')
     document.save(docPath)
