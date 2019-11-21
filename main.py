@@ -23,9 +23,21 @@ if __name__ == '__main__':
     document = Document()
 
     for name in os.listdir(dirOut):
-        p = document.add_paragraph(name, 'List Bullet')
+        p = document.add_paragraph(name)
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         p = p.insert_paragraph_before('')
+        p.line_spacing_rule = WD_LINE_SPACING.SINGLE
+
+        c = document.add_paragraph('[Comment]')
+        c.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
         r = p.add_run()
         r.add_picture(os.path.join(dirOut, name))
-        p = p.insert_paragraph_before(name, 'Heading 1')
+        last_paragraph = document.paragraphs[-1]
+        last_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        r.orientation = WD_ORIENT.PORTRAIT
+        r.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+        p = p.insert_paragraph_before('')
+     #   p = p.insert_paragraph_before(name, 'Heading 1')
     document.save(docPath)
